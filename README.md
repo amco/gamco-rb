@@ -52,7 +52,7 @@ you want to collect extra data. Example:
 ```ruby
 <html>
   <head>
-    <%= ga_javascript_tags environment: Rails.env %>
+    <%= ga_javascript_tags(environment: Rails.env) %>
     ...
   </head>
 ```
@@ -64,7 +64,7 @@ needed by using the `ga_tag` helper as the following example:
 
 ```ruby
 # app/views/products/show.html.erb
-<%= ga_tag("event", "product_view", { product_id: @product.id }) %>
+<%= ga_tag "event", "product_view", product_id: @product.id %>
 
 ...
 ```
