@@ -1,5 +1,8 @@
 # Gamco - Google Analytics Helper
 
+This gem aims to provide a simple and easy way to send data to Google
+Analytics. It provides some view helpers that can be used in any rails
+applications.
 
 ## Installation
 
@@ -49,9 +52,7 @@ you want to collect extra data. Example:
 ```ruby
 <html>
   <head>
-    <%= ga_javascript_tags
-      language: I18n.locale,
-      environment: Rails.env %>
+    <%= ga_javascript_tags environment: Rails.env %>
     ...
   </head>
 ```
