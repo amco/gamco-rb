@@ -44,12 +44,14 @@ layout file `(app/views/layouts/application.html.erb)`.
 
 This will send the default `page_view` event every time the user navigates
 to a different path in your application. You can pass other dimensions if
-you want to collect extra data like this:
+you want to collect extra data. Example:
 
 ```ruby
 <html>
   <head>
-    <%= ga_javascript_tags language: I18n.locale %>
+    <%= ga_javascript_tags
+      language: I18n.locale,
+      environment: Rails.env %>
     ...
   </head>
 ```
@@ -70,7 +72,7 @@ needed by using the `ga_tag` helper as the following example:
 
 There are sensitive information that you might not want to send it directly
 to Google Analytics to prevent some vulnerabilities, you can achieve this
-by using the `ga_secure` helper which generates a digest for the value:
+by using the `ga_secure` helper which generates a digest for the passed value:
 
 ```ruby
 # app/views/products/show.html.erb
@@ -80,6 +82,20 @@ by using the `ga_secure` helper which generates a digest for the value:
 }) %>
 
 ...
+```
+
+By default the generated value is a MD5 digest. You can configure which
+algorithm will be used in the initializer `config/initializers/gamco.rb`:
+
+```ruby
+Gamco.setup do |config|
+  ...
+
+  # ===> Method to secure sensitive data.
+  # config.secure = -> (value) {
+  #   Digest::MD5.hexdigest(value)
+  # }
+end
 ```
 
 ## Development
