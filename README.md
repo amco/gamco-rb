@@ -2,7 +2,7 @@
 
 This gem aims to provide a simple and easy way to send data to Google
 Analytics. It provides some view helpers that can be used in any rails
-applications.
+application.
 
 ## Installation
 
@@ -72,15 +72,14 @@ needed by using the `ga_tag` helper as the following example:
 ### Secure data
 
 There are sensitive information that you might not want to send it directly
-to Google Analytics to prevent some vulnerabilities, you can achieve this
+to Google Analytics to prevent some vulnerabilities. You can achieve this
 by using the `ga_secure` helper which generates a digest for the passed value:
 
 ```ruby
 # app/views/products/show.html.erb
-<%= ga_tag("event", "product_view", {
+<%= ga_tag "event", "product_view",
   user: ga_secure(current_user.id),
-  product_id: @product.id
-}) %>
+  product_id: @product.id %>
 
 ...
 ```
