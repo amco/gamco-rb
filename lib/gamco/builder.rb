@@ -16,7 +16,7 @@ module Gamco
     def tag(type, event, options = {})
       view.content_tag(:script) do
         dimensions = options.to_json
-        "gtag('#{type}', '#{event}', #{dimensions})"
+        "gtag('#{type}', '#{event}', #{dimensions})".html_safe
       end
     end
 
