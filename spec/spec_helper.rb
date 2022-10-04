@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "rails"
 require "gamco"
 
 RSpec.configure do |config|
