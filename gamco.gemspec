@@ -8,12 +8,14 @@ Gem::Specification.new do |spec|
   spec.authors = ["Alejandro Gutiérrez"]
   spec.email = ["alejandrodevs@gmail.com"]
 
-  spec.summary = ""
-  spec.description = ""
+  spec.summary = "Google Analytics helpers for ruby applications."
+  spec.description = "This gem aims to provide a simple and easy way to send data to Google Analytics."
   spec.homepage = "https://github.com/amco/gamco"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 2.7.0"
 
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
   #spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -28,6 +30,7 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
+
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
