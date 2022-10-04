@@ -12,6 +12,7 @@ module Gamco
     end
 
     def ga_secure(value)
+      return unless value.present?
       Configuration.secure.call(value)
     end
 
