@@ -98,6 +98,22 @@ Gamco.setup do |config|
 end
 ```
 
+### Usage per environment
+
+It is possible that you want to send data to Google Analytics just in
+production environments. You can control that using the `active` configuration
+option in the initializer `config/initializers/gamco.rb`:
+
+```ruby
+Gamco.setup do |config|
+  # ===> Required GA4 configuration options
+  config.tag_id = "G-XXXXXXXXX"
+  config.active = Rails.application.credentials.dig(:gamco, :active)
+
+  ...
+end
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then,

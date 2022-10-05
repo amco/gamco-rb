@@ -34,12 +34,10 @@ module Gamco
     end
 
     def gtag_script_content(tag_id, options)
-      <<-FOO
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '#{tag_id}', #{options.to_json});
-      FOO
+      "window.dataLayer = window.dataLayer || [];"\
+      "function gtag(){dataLayer.push(arguments);}"\
+      "gtag('js', new Date());"\
+      "gtag('config', '#{tag_id}', #{options.to_json});"
     end
 
     def tag_manager_script_url
