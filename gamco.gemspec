@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Google Analytics helpers for ruby applications."
   spec.description = "This gem aims to provide a simple and easy way to send data to Google Analytics."
-  spec.homepage = "https://github.com/amco/gamco"
+  spec.homepage = "https://github.com/amco/gamco-rb"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
 
