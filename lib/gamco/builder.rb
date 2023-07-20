@@ -24,7 +24,7 @@ module Gamco
 
     def gtag_manager_script(tag_id)
       view.content_tag :script, "", async: true,
-        src: "#{tag_manager_script_url}?id=#{tag_id}"
+                                    src: "#{tag_manager_script_url}?id=#{tag_id}"
     end
 
     def gtag_script(tag_id, options)
@@ -34,10 +34,10 @@ module Gamco
     end
 
     def gtag_script_content(tag_id, options)
-      "window.dataLayer = window.dataLayer || [];"\
-      "function gtag(){dataLayer.push(arguments);}"\
-      "gtag('js', new Date());"\
-      "gtag('config', '#{tag_id}', #{options.to_json});"
+      "window.dataLayer = window.dataLayer || [];" \
+        "function gtag(){dataLayer.push(arguments);}" \
+        "gtag('js', new Date());" \
+        "gtag('config', '#{tag_id}', #{options.to_json});"
     end
 
     def tag_manager_script_url
