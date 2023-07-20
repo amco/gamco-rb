@@ -5,16 +5,19 @@ module Gamco
     def ga_javascript_tags(tag_id: Configuration.tag_id, **options)
       return unless Configuration.active
       raise Errors::NoTagId unless tag_id.present?
+
       ga_builder.javascript_tags(tag_id, options)
     end
 
     def ga_tag(type, event, options = {})
       return unless Configuration.active
+
       ga_builder.tag(type, event, options)
     end
 
     def ga_secure(value)
       return unless value.present?
+
       Configuration.secure.call(value)
     end
 
