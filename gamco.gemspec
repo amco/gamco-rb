@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "This gem aims to provide a simple and easy way to send data to Google Analytics."
   spec.homepage = "https://github.com/amco/gamco-rb"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.7.0"
+  spec.required_ruby_version = ">= 3.2"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "rails", ">= 5.0"
+  spec.add_dependency "rails", ">= 6.0"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
